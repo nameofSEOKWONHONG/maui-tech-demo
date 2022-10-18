@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:helpers="clr-namespace:Friday.MobileApplication.Helpers"
+             x:Class="Friday.MobileApplication.LoginPage"
+             BackgroundColor="{StaticResource Primary}">
+    <ContentPage.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style x:Key="ValidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Green" />
+        </Style>
+    </ContentPage.Resources>
+    
+    <Grid>
+        <StackLayout Margin="20">
+            <Label Text="Friday" 
+                   HorizontalOptions="StartAndExpand"
+                   FontSize="80" 
+                   TextColor="White"/>
+
+            <StackLayout Margin="0,20">
+                <Label Style="{StaticResource Welcome}" FontSize="32" Text="환영합니다"/>
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary}" 
+                       FontSize="16" Text="로그인 하세요."/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label TextColor="{StaticResource Secondary}" 
+                       FontSize="16" Text="아이디(메일)"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
+                    <Entry x:Name="UserId" 
+                           toolkit:SetFocusOnEntryCompletedBehavior.NextElement="{x:Reference entPassword}"
+                           Keyboard="Email"
+                           BackgroundColor="Transparent" 
+                           Placeholder="이메일을 입력하세요" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray"
+                           ReturnType="Done">
+                        <Entry.Behaviors>
+                            <toolkit:EmailValidationBehavior
+                                x:Name="EmailValidator"
+                                Flags="ValidateOnValueChanged"
+                                DecorationFlags="Trim"
+                                ValidStyle="{StaticResource ValidEntryStyle}"
+                                InvalidStyle="{StaticResource InvalidEntryStyle}"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Grid>
+                <Label TextColor="{StaticResource Secondary}" 
+                       FontSize="16" Text="암호"/>
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
+                    <Entry x:Name="entPassword"  
+                           Keyboard="Text" 
+                           BackgroundColor="Transparent" 
+                           Placeholder="암호를 입력하세요" 
+                           TextColor="Black" Margin="5,0"
+                           PlaceholderColor="Gray" IsPassword="True"
+                           ReturnType="Done"/>
+                </Grid>
+                <StackLayout Margin="0, 5" 
+                             Spacing="3"
+                             Orientation="Horizontal">
+                    <Label Text="ID 저장"
+                           TextColor="{StaticResource Secondary}"
+                           HorizontalOptions="EndAndExpand"/>
+                    <CheckBox x:Name="IsSave"
+                              Color="{StaticResource Secondary}"
+                              BackgroundColor="{StaticResource Primary}"
+                              Background="{StaticResource Primary}"
+                              WidthRequest="40"
+                              HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Margin="0,15"                    
+                    Text="로그인" 
+                    TextColor="White"
+                    Clicked="OnSignInClicked"
+                    HorizontalOptions="EndAndExpand">
+                <Button.ImageSource>
+                    <FontImageSource 
+                        FontFamily="MaterialDesignIcons" 
+                        Glyph="{x:Static helpers:MaterialDesignIconsFonts.Login}"
+                        Size="24">                        
+                    </FontImageSource>                        
+                </Button.ImageSource>
+            </Button>
+
+            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                <Label TextColor="{StaticResource Secondary}" 
+                       FontSize="16" Text="암호찾기" 
+                       VerticalOptions="EndAndExpand" 
+                       HorizontalOptions="StartAndExpand" 
+                       />
+                <Label FontFamily="OpenSansRegular" 
+                       TextColor="{StaticResource Secondary}" 
+                       FontSize="16" Text="회원가입"
+                       VerticalOptions="EndAndExpand" 
+                       HorizontalOptions="EndAndExpand" 
+                       />
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+    <!--<ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="logo.png"
+                SemanticProperties.Description=""
+                HeightRequest="40"
+                HorizontalOptions="Center" />
+
+            <VerticalStackLayout Spacing="10" Margin="5">
+                <Entry x:Name="UserID"
+                    Placeholder="사용자 ID"
+                    Text="{Binding UserId}"
+                    HeightRequest="100" />
+                <Entry x:Name="Password"
+                    Placeholder="사용자 암호"
+                    Text="{Binding Password}"
+                    IsPassword="true"
+                HeightRequest="100" />                
+
+                <Grid ColumnDefinitions="*" ColumnSpacing="4">
+                    <Button Text="로그인"
+                            Clicked="OnLoginClicked"/>
+                </Grid>
+            </VerticalStackLayout>
+
+            --><!--<Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me11"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />--><!--
+
+        </VerticalStackLayout>
+    </ScrollView>-->
+
+</ContentPage>

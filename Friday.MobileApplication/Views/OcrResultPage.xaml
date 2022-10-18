@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Friday.MobileApplication.Views.OcrResultPage" 
+             xmlns:helpers="clr-namespace:Friday.MobileApplication.Helpers"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:controls="clr-namespace:Friday.MobileApplication.ContentViews"
+             Title="증빙입력">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="5">
+                    <Label Text="회차" TextColor="{StaticResource Gray500}"
+                       FontSize="16"/>
+                    <Picker x:Name="picker"
+                        Title="회차를 선택하세요.">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>1회차 10월 24일 촬영</x:String>
+                                <x:String>2회차 10월 25일 촬영</x:String>
+                                <x:String>3회차 10월 26일 촬영</x:String>
+                                <x:String>4회차 10월 27일 촬영</x:String>
+                                <x:String>5회차 10월 28일 촬영</x:String>
+                                <x:String>6회차 10월 29일 촬영</x:String>
+                                <x:String>7회차 10월 30일 촬영</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+                <controls:LabelInputView LabelText="사용처"
+                                         EntryText="(주)CU 편의점"
+                                         EntryPlaceholderText="사용처를 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputNumberView LabelText="금액"
+                                         EntryText="10000"
+                                         EntryPlaceholderText="금액을 입력하세요."/>
+                <controls:LabelInputView LabelText="비고"
+                                         EntryText="테스트 영수증 입니다."
+                                         EntryPlaceholderText="추가 사항을 입력하세요"/>
+            </StackLayout>            
+        </ScrollView>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Clicked="OnResultClicked" Text="증빙 업로드">
+                <Button.ImageSource>
+                    <FontImageSource FontFamily="MaterialDesignIcons"
+                        Glyph="{x:Static helpers:MaterialDesignIconsFonts.Upload}"
+                        Size="24"/>
+                </Button.ImageSource>
+            </Button>
+            <Button Clicked="OnIndicatorCloseClicked" Text="닫기" Grid.Column="1" Grid.ColumnSpan="3">
+                <Button.ImageSource>
+                    <FontImageSource FontFamily="MaterialDesignIcons"
+                        Glyph="{x:Static helpers:MaterialDesignIconsFonts.Close}"
+                        Size="24"/>
+                </Button.ImageSource>
+            </Button>
+        </Grid>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:Friday.MobileApplication.Helpers"
+             x:Class="Friday.MobileApplication.Views.HomePage"
+             Title="홈">
+    <VerticalStackLayout>
+        <Border BackgroundColor="WhiteSmoke">
+            <VerticalStackLayout>
+                <Label TextColor="MediumVioletRed"
+                       FontAttributes="Bold"
+                       Text="시스템 공지사항"/>
+                <Label>시스템 정기 점검 12월 30일 정기 점검이 있습니다. 사용에 유의하시기 바랍니다.</Label>
+            </VerticalStackLayout>            
+        </Border>
+        <Border>
+            <VerticalStackLayout>
+                <Label TextColor="OrangeRed"
+                       FontAttributes="Bold"
+                       Text="오늘의 공지사항"/>
+                <Label Text="회계 마감일 입니다. 금일(24일)까지 모든 영수증 청구 바랍니다.&#10;미청구된 내역은 다음 회차에 청구될 예정입니다."/>
+            </VerticalStackLayout>
+        </Border>
+        <Border>
+            <StackLayout>
+                <Label Text="총 청구 금액" 
+                       FontAttributes="Bold"/>
+                <Label Text="1,500,000"
+                       HorizontalTextAlignment="End"/>
+            </StackLayout>
+        </Border>
+        <Border>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTapped"/>
+                </Grid.GestureRecognizers>
+                <StackLayout Grid.Row="0"
+                             Orientation="Horizontal">
+                    <Label FontFamily="MaterialDesignIcons" 
+                           Text="{x:Static helpers:MaterialDesignIconsFonts.Movie}"
+                           FontSize="20"
+                           VerticalOptions="Start"/>
+                    <Label Text="진행중 프로젝트" VerticalOptions="Center"/>
+                    <Label Text="영화 미정" HorizontalOptions="Center"/>
+                </StackLayout>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                           FontFamily="MaterialDesignIcons" 
+                           Text="{x:Static helpers:MaterialDesignIconsFonts.Run}"
+                           FontSize="20"
+                           HorizontalOptions="Start"/>
+                    <Label Grid.Column="1" Text="진행중 회차" HorizontalOptions="Start"/>
+                    <Label Grid.Column="2" Text="4회차 10월 24일" HorizontalOptions="Center"/>
+                    <Label Grid.Column="3" 
+                           FontFamily="MaterialDesignIcons"
+                           Text="{x:Static helpers:MaterialDesignIconsFonts.ArrowRightBox}"
+                           FontSize="20"
+                           HorizontalOptions="End"/>
+                </Grid>                
+            </Grid>
+        </Border>
+        <Button Text="회계 담당자" Clicked="OnAccountsManagerClicked">
+            <Button.ImageSource>
+                <FontImageSource FontFamily="MaterialDesignIcons"
+                                 Glyph="{x:Static helpers:MaterialDesignIconsFonts.Phone}"
+                                 Size="25" />
+            </Button.ImageSource>
+        </Button>
+        <Button Text="밴드 연결" Clicked="OnBankConnectClicked">
+            <Button.ImageSource>
+                <FontImageSource FontFamily="MaterialDesignIcons"
+                                 Glyph="{x:Static helpers:MaterialDesignIconsFonts.Connection}"
+                                 Size="25" />
+            </Button.ImageSource>
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>

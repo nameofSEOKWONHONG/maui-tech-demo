@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"             
+             x:Class="Friday.MobileApplication.ContentViews.LabelInputNumberView">
+    <ContentView.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+    </ContentView.Resources>
+    <StackLayout Padding="5">
+        <Label Text="{Binding LabelText}" TextColor="{StaticResource Gray500}" 
+               FontSize="16"/>
+        <Grid Margin="0,5" Padding="5">
+            <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
+            <Entry x:Name="Input" Keyboard="Numeric" 
+                   Text="{Binding EntryText}"
+                   Placeholder="{Binding EntryPlaceholderText}" 
+                   PlaceholderColor="#C7C7C7" 
+                   HorizontalOptions="Start" 
+                   VerticalOptions="Center"
+                   Completed="OnCompleted"
+                   Unfocused="OnUnfocused"
+                   MaxLength="12"
+                   FontSize="18"
+                   ReturnType="Done">
+            </Entry>
+        </Grid>
+    </StackLayout>
+</ContentView>

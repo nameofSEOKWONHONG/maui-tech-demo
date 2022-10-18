@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Friday.MobileApplication.Views.UserPage"
+             Title="회원정보">
+    <VerticalStackLayout>
+        <Border>
+            <Label Text="내정보"/>
+        </Border>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label x:Name="Latitude">x</Label>
+        <Label x:Name="Longitude">y</Label>
+        <Label x:Name="Altitude">z</Label>
+
+        <Button Clicked="OnClicked" Text="Get Geo Location"></Button>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:Friday.MobileApplication.Helpers"
+             x:Class="Friday.MobileApplication.Views.OcrPage"             
+             Title="영수증">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <VerticalStackLayout
+            Grid.ColumnSpan="2"
+            HorizontalOptions="CenterAndExpand">
+            <Label>영수증 테스트</Label>
+            <VerticalStackLayout Margin="20"
+                         Spacing="10">
+                <Label Text="Primary colors" />
+                <Rectangle Fill="Red"
+                   HeightRequest="30"
+                   WidthRequest="300" />
+                <Rectangle Fill="Yellow"
+                   HeightRequest="30"
+                   WidthRequest="300" />
+                <Rectangle Fill="Blue"
+                   HeightRequest="30"
+                   WidthRequest="300" />
+                <Label Text="Secondary colors" />
+                <Rectangle Fill="Green"
+                   HeightRequest="30"
+                   WidthRequest="300" />
+                <Rectangle Fill="Orange"
+                   HeightRequest="30"
+                   WidthRequest="300" />
+                <Rectangle Fill="Purple"
+                   HeightRequest="30"
+                   WidthRequest="300" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        <StackLayout Margin="20" Grid.ColumnSpan="2">
+            <Label Text="Primary colors" />
+            <BoxView Color="Red"
+                 HeightRequest="40" />
+            <BoxView Color="Yellow"
+                 HeightRequest="40" />
+            <BoxView Color="Blue"
+                 HeightRequest="40" />
+            <Label Text="Secondary colors" />
+            <BoxView Color="Green"
+                 HeightRequest="40" />
+            <BoxView Color="Orange"
+                 HeightRequest="40" />
+            <BoxView Color="Purple"
+                 HeightRequest="40" />
+        </StackLayout>
+        <StackLayout Margin="20"
+                 Orientation="Horizontal"
+                 HorizontalOptions="Center">
+            <BoxView Color="Red"
+                 WidthRequest="40" />
+            <BoxView Color="Yellow"
+                 WidthRequest="40" />
+            <BoxView Color="Blue"
+                 WidthRequest="40" />
+            <BoxView Color="Green"
+                 WidthRequest="40" />
+            <BoxView Color="Orange"
+                 WidthRequest="40" />
+            <BoxView Color="Purple"
+                 WidthRequest="40" />
+        </StackLayout>
+        <Button Clicked="OnCameraClicked" Text="사진" Grid.Row="2">
+            <Button.ImageSource>
+                <FontImageSource FontFamily="MaterialDesignIcons"
+                        Glyph="{x:Static helpers:MaterialDesignIconsFonts.Camera}"
+                        Size="24"/>
+            </Button.ImageSource>
+        </Button>
+        <Button Clicked="OnBillingClicked" Text="증빙" Grid.Row="2" Grid.Column="2">
+            <Button.ImageSource>
+                <FontImageSource FontFamily="MaterialDesignIcons" 
+                        Glyph="{x:Static helpers:MaterialDesignIconsFonts.ReceiptTextOutline}"
+                        Size="24"/>
+            </Button.ImageSource>
+        </Button>
+    </Grid>
+</ContentPage>
