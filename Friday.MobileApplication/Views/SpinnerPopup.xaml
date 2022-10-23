@@ -2,10 +2,38 @@
 <toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Friday.MobileApplication.Views.SpinnerPopup"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             >
-    <VerticalStackLayout>
-        <ActivityIndicator IsRunning="True" />
-        <Label Text="{Binding Message, Mode=OneWay}" />
-    </VerticalStackLayout>
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <ActivityIndicator Grid.Row="0" 
+                           IsRunning="True"                           
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+        <Label Grid.Row="1" 
+               TextColor="{StaticResource Primary}"
+               Text="{Binding Message, Mode=OneWay}" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+    </Grid>-->
+    <StackLayout Margin="20"
+                 Spacing="2">
+        <Label Text=""               
+               HorizontalOptions="Center" />
+        <Label Text=""               
+               HorizontalOptions="Center" />
+        <ActivityIndicator 
+                           IsRunning="True"                           
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+        <Label 
+               TextColor="{StaticResource Primary}"
+               Text="{Binding Message, Mode=OneWay}" 
+               HorizontalOptions="Center"/>
+    </StackLayout>
 </toolkit:Popup>

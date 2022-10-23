@@ -101,14 +101,13 @@
             </Button>
 
             <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                <Label TextColor="{StaticResource Tertiary}" 
+                <Button 
                        FontSize="16" 
                        Text="암호찾기"
                        VerticalOptions="EndAndExpand" 
                        HorizontalOptions="StartAndExpand" 
                        />
-                <Label FontFamily="OpenSansRegular" 
-                       TextColor="{StaticResource Tertiary}" 
+                <Button                       
                        FontSize="16" 
                        Text="회원가입"
                        VerticalOptions="EndAndExpand" 

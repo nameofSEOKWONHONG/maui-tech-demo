@@ -18,9 +18,9 @@
         <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
         <Setter Property="Padding" Value="5"/>
         <Setter Property="Margin" Value="5"/>
-        <Setter Property="Stroke" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />
+        <Setter Property="Stroke" Value="{StaticResource Gray200}" />
         <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"/>
-        <Setter Property="StrokeThickness" Value="1"/>        
+        <Setter Property="StrokeThickness" Value="0.5"/>        
     </Style>
 
     <Style TargetType="BoxView">
