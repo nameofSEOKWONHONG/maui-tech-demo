@@ -32,10 +32,14 @@
 
     <ItemGroup>
         <!-- App Icon -->
-        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+        <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#0b0f19" />
+        <MauiSplashScreen Include="Resources\Images\splash_logo.svg">
+          <Color>0b0f19</Color>
+          <BaseSize>400,400</BaseSize>
+        </MauiSplashScreen>
 
         <!-- Splash Screen -->
-
+        <MauiSplashScreen Include="Resources\Splash\splash_logo.svg" Color="0b0f19" BaseSize="400,400" />
         <!-- Images -->
         <MauiImage Include="Resources\Images\*" />
         <MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
@@ -48,15 +52,19 @@
     </ItemGroup>
 
     <ItemGroup>
+      <MauiImage Remove="Resources\Images\splash_logo.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
       <None Remove="Resources\Fonts\glyphicons-halflings-regular.ttf" />
       <None Remove="Resources\Images\account.png" />
       <None Remove="Resources\Images\account_cog.png" />
       <None Remove="Resources\Images\home.png" />
+      <None Remove="Resources\Images\photo.jpg" />
       <None Remove="Resources\Images\receipt_text_outline.png" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <MauiSplashScreen Include="Resources\Splash\app_splash_adobe_express.svg" />
+      <None Remove="Resources\Images\splash_logo.svg" />
+      <None Remove="Resources\Images\xamarinstore.jpg" />
+      <None Remove="Resources\Splash\app_splash_adobe_express.svg" />
     </ItemGroup>
 
     <ItemGroup>
@@ -64,23 +72,23 @@
       <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
       <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
       <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
-    </ItemGroup>
-    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-      <PackageReference Include="SQLitePCLRaw.core" Version="2.1.2" />
       <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.2" />
+      <PackageReference Include="SQLitePCLRaw.core" Version="2.1.2" />
       <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.2" />
       <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.2" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\02.Data\Friday.Data\Friday.Data.csproj" />
+    <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+      <PackageReference Include="SQLitePCLRaw.core" Version="2.1.0-pre20220207221914" />
+      <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.0-pre20220207221914" />
+      <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.0-pre20220207221914" />
+      <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.0-pre20220207221914" />
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="ContentViews\LabelInputView.xaml.cs">
+      <Compile Update="Controls\LabelInputView.xaml.cs">
         <DependentUpon>LabelInputView.xaml</DependentUpon>
       </Compile>
-      <Compile Update="LoginPage.xaml.cs">
+      <Compile Update="Views\LoginPage.xaml.cs">
         <DependentUpon>LoginPage.xaml</DependentUpon>
       </Compile>
       <Compile Update="Views\OcrListPage.xaml.cs">
@@ -89,10 +97,19 @@
     </ItemGroup>
 
     <ItemGroup>
-      <MauiXaml Update="ContentViews\LabelInputNumberView.xaml">
+      <MauiXaml Update="Controls\FlyoutFooter.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
-      <MauiXaml Update="ContentViews\LabelInputView.xaml">
+      <MauiXaml Update="Controls\FlyoutHeader.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Controls\LabelInputNumberView.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Controls\LabelInputView.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Views\ComponetViewPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
       <MauiXaml Update="Views\HomePage.xaml">

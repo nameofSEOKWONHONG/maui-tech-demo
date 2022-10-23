@@ -4,20 +4,105 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
     xmlns:views="clr-namespace:Friday.MobileApplication.Views"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:controls="clr-namespace:Friday.MobileApplication.Controls"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"    
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    FlyoutBackgroundColor="{StaticResource Secondary}"
+    FlyoutBehavior="Disabled"
+    FlyoutBackdrop="{StaticResource Gray600}"
+    MaximumWidthRequest="400"
+    MaximumHeightRequest="500"
+    WidthRequest="400"
+    HeightRequest="400">
+    <!--FlyoutBackgroundImage="photo.png"-->
+    <!--<Shell.TabBarIsVisible>false</Shell.TabBarIsVisible>-->
+    <!--<Shell.NavBarIsVisible>false</Shell.NavBarIsVisible>-->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource White}" />                                    
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource White}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!--
+Custom Style you can apply to any Flyout Item
+-->
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="HeightRequest" Value="140"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#ACACAC" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="#7582eb" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            <Style TargetType="ShellContent">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Secondary}" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Tertiary}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource Gray300}"/>
+                <Setter Property="Shell.TabBarDisabledColor" Value="{StaticResource Gray500}"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
     
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="홈" 
-                      Icon="home.png">
-            <views:HomePage/>
-        </ShellContent>
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader/>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+    <ShellContent Route="LoginPage"
+                  Title="Login"
+                  ContentTemplate="{DataTemplate views:LoginPage}"
+                  FlyoutItemIsVisible="False"/>
+    <FlyoutItem Route="App" 
+                Title="App"
+                FlyoutDisplayOptions="AsMultipleItems"
+                >        
+        <ShellContent Title="홈"
+                      Icon="home.png"
+                      ContentTemplate="{DataTemplate views:HomePage}"
+                      Route="MainPage"/>
         <ShellContent Title="증빙"
-                      Icon="receipt_text_outline.png">
-            <views:OcrListPage/>
-        </ShellContent>
+                      Icon="receipt_text_outline.png"
+                      ContentTemplate="{DataTemplate views:OcrListPage}"
+                      Route="OcrListPage"/>
         <ShellContent Title="설정"
-                      Icon="account_cog.png">
-            <views:SettingPage/>
-        </ShellContent>        
+                      Icon="account_cog.png"
+                      ContentTemplate="{DataTemplate views:SettingPage}"
+                      Route="SettingPage"/>
     </FlyoutItem>
+    <MenuItem Text="Help"/>
 </Shell>
+

@@ -2,8 +2,7 @@
 using Android.Content.PM;
 #endif
 
-using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Core.Views;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.Maui.Controls.PlatformConfiguration;
 
 namespace Friday.MobileApplication.Views;
@@ -13,23 +12,21 @@ public partial class HomePage : ContentPage
 	public HomePage()
 	{
 		InitializeComponent();
-        this.Loaded += async (s, e) =>
-        {
-            await Toast.Make("중요 공지 사항이 있습니다. 확인하세요.",
-            CommunityToolkit.Maui.Core.ToastDuration.Short,
-            20).Show();
-        };
+        var vm = ServiceHelper.GetService<HomeViewModel>();
+        vm.SystemNotice = "시스템 정기 점검 12월 30일 정기 점검이 있습니다.\n사용에 유의하시기 바랍니다.";
+        BindingContext = vm;
+
 	}
 
     private async void OnTapped(object sender, EventArgs e)
-    {        
+    {
 		await Shell.Current.DisplayAlert("test", "test", "OK");
     }
 
 	private void OnAccountsManagerClicked(object sender, EventArgs e)
 	{
         if (PhoneDialer.Default.IsSupported)
-            PhoneDialer.Default.Open("010-2153-6821");
+            PhoneDialer.Default.Open("010-7102-0130");
     }
 
 	private async void OnBankConnectClicked(object sender, EventArgs e)
@@ -52,4 +49,10 @@ public partial class HomePage : ContentPage
         }
 #endif
     }
+}
+
+public partial class HomeViewModel : ObservableObject
+{
+    [ObservableProperty]
+    string systemNotice;
 }

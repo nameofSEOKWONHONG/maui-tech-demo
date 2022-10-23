@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Friday.MobileApplication.Views.SettingPage"
-             Title="설정">
+             Title="설정"
+             BackgroundColor="{StaticResource Secondary}">
     <VerticalStackLayout>
-        <Border>
+        <Border BackgroundColor="{StaticResource Primary}">
             <VerticalStackLayout>
                 <Label Text="내정보" FontAttributes="Bold"/>
                 <StackLayout Spacing="3"
@@ -23,7 +24,7 @@
                 </StackLayout>
                 <StackLayout Spacing="3"
                              Orientation="Horizontal">
-                    <Button Text="수정"
+                    <Button Text="수정"                            
                             HorizontalOptions="EndAndExpand"/>
                 </StackLayout>                
             </VerticalStackLayout>

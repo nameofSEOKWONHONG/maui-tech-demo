@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:helpers="clr-namespace:Friday.MobileApplication.Helpers"
              x:Class="Friday.MobileApplication.Views.OcrListPage"             
-             Title="증빙내역">
+             Title="증빙내역"
+             BackgroundColor="{StaticResource Secondary}">
     <ContentPage.Resources>
         <helpers:StringToColor x:Key="StringToColor" />
     </ContentPage.Resources>
@@ -19,7 +20,8 @@
                             Scrolled="cv_Scrolled"
                             VerticalOptions="FillAndExpand"
                             HorizontalOptions="FillAndExpand"                            
-                            SelectionChanged="CollectionView_SelectionChanged">
+                            SelectionChanged="CollectionView_SelectionChanged"
+                            BackgroundColor="{StaticResource Primary}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -27,7 +29,7 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Text="{Binding Title}"
+                            <Label Grid.Column="0" Text="{Binding Title}"                                   
                                    Padding="10"/>
                             <Label Grid.Column="1" Text="{Binding Approval}"
                                    VerticalTextAlignment="End"
@@ -43,8 +45,9 @@
         <Button Grid.Row="1" Clicked="OnNewClicked" Text="신규" Grid.ColumnSpan="2">
             <Button.ImageSource>
                 <FontImageSource FontFamily="MaterialDesignIcons"
-                        Glyph="{x:Static helpers:MaterialDesignIconsFonts.OpenInNew}"
-                        Size="24"/>
+                                 Color="{StaticResource Tertiary}"
+                                 Glyph="{x:Static helpers:MaterialDesignIconsFonts.OpenInNew}"
+                                 Size="24"/>
             </Button.ImageSource>
         </Button>
     </Grid>

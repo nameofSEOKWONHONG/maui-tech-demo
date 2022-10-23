@@ -1,5 +1,4 @@
-﻿using Friday.Data.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,10 +13,10 @@ namespace Friday.MobileApplication.Services
 
         }
 
-        public async Task<TbStaff> LoginAsync(string userId, string password)
-        {
-            //send api login url and return result
-            return null;
-        }
+        //public async Task<Accounts> LoginAsync(string userId, string password)
+        //{
+        //    //send api login url and return result
+        //    return null;
+        //}
     }
 }

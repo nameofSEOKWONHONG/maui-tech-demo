@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Friday.MobileApplication.Views.UserPage"
-             Title="회원정보">
-    <VerticalStackLayout>
-        <Border>
+             Title="회원정보"
+             BackgroundColor="{StaticResource Secondary}">
+    <VerticalStackLayout BackgroundColor="{StaticResource Secondary}">
+        <Border BackgroundColor="{StaticResource Primary}">
             <Label Text="내정보"/>
         </Border>
         <Label 

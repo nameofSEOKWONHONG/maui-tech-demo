@@ -5,10 +5,6 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Friday.MobileApplication", "Friday.MobileApplication.csproj", "{A27DFA26-6670-4606-BCA1-900901D056B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Friday.Data", "..\..\02.Data\Friday.Data\Friday.Data.csproj", "{2F687D53-5BFE-4928-A1F1-90A0EAB602FD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friday.MobileBlazorApplcation", "..\Friday.MobileBlazorApplcation\Friday.MobileBlazorApplcation.csproj", "{1A618319-FB1F-4B31-97F0-93421C0725E5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,16 +17,6 @@ Global
 		{A27DFA26-6670-4606-BCA1-900901D056B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A27DFA26-6670-4606-BCA1-900901D056B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A27DFA26-6670-4606-BCA1-900901D056B6}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{2F687D53-5BFE-4928-A1F1-90A0EAB602FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F687D53-5BFE-4928-A1F1-90A0EAB602FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F687D53-5BFE-4928-A1F1-90A0EAB602FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F687D53-5BFE-4928-A1F1-90A0EAB602FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A618319-FB1F-4B31-97F0-93421C0725E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A618319-FB1F-4B31-97F0-93421C0725E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A618319-FB1F-4B31-97F0-93421C0725E5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{1A618319-FB1F-4B31-97F0-93421C0725E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A618319-FB1F-4B31-97F0-93421C0725E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A618319-FB1F-4B31-97F0-93421C0725E5}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

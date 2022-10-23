@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:helpers="clr-namespace:Friday.MobileApplication.Helpers"
-             x:Class="Friday.MobileApplication.LoginPage"
-             BackgroundColor="{StaticResource Primary}">
+             x:Class="Friday.MobileApplication.Views.LoginPage"
+             BackgroundColor="{StaticResource Secondary}">
     <ContentPage.Resources>
         <Style x:Key="InvalidEntryStyle" TargetType="Entry">
             <Setter Property="TextColor" Value="Red" />
@@ -19,27 +19,33 @@
             <Label Text="Friday" 
                    HorizontalOptions="StartAndExpand"
                    FontSize="80" 
-                   TextColor="White"/>
+                   TextColor="{StaticResource White}"/>
 
             <StackLayout Margin="0,20">
-                <Label Style="{StaticResource Welcome}" FontSize="32" Text="환영합니다"/>
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource Secondary}" 
-                       FontSize="16" Text="로그인 하세요."/>
+                <Label Style="{StaticResource Welcome}" 
+                       FontSize="32" 
+                       Text="환영합니다"/>
+                <Label FontFamily="OpenSansRegular" 
+                       TextColor="{StaticResource White}" 
+                       FontSize="16" 
+                       Text="로그인 하세요."/>
             </StackLayout>
 
             <StackLayout>
-                <Label TextColor="{StaticResource Secondary}" 
-                       FontSize="16" Text="아이디(메일)"/>
+                <Label TextColor="{StaticResource White}" 
+                       FontSize="16" 
+                       Text="아이디(메일)"/>
                 <Grid Margin="0,5">
-                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
                     <Entry x:Name="UserId" 
                            toolkit:SetFocusOnEntryCompletedBehavior.NextElement="{x:Reference entPassword}"
                            Keyboard="Email"
                            BackgroundColor="Transparent" 
                            Placeholder="이메일을 입력하세요" 
-                           TextColor="Black" Margin="5,0"
-                           PlaceholderColor="Gray"
-                           ReturnType="Done">
+                           TextColor="{StaticResource White}" 
+                           Margin="5,0"
+                           PlaceholderColor="DarkGray" 
+                           ReturnType="Done"
+                           Text="{Binding Email}">
                         <Entry.Behaviors>
                             <toolkit:EmailValidationBehavior
                                 x:Name="EmailValidator"
@@ -50,26 +56,29 @@
                         </Entry.Behaviors>
                     </Entry>
                 </Grid>
-                <Label TextColor="{StaticResource Secondary}" 
+                <Label TextColor="{StaticResource White}" 
                        FontSize="16" Text="암호"/>
                 <Grid Margin="0,5">
-                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
+                    <!--<Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>-->
                     <Entry x:Name="entPassword"  
                            Keyboard="Text" 
                            BackgroundColor="Transparent" 
                            Placeholder="암호를 입력하세요" 
-                           TextColor="Black" Margin="5,0"
-                           PlaceholderColor="Gray" IsPassword="True"
+                           TextColor="{StaticResource White}" 
+                           Margin="5,0"
+                           PlaceholderColor="DarkGray" 
+                           IsPassword="True"
                            ReturnType="Done"/>
                 </Grid>
                 <StackLayout Margin="0, 5" 
                              Spacing="3"
                              Orientation="Horizontal">
                     <Label Text="ID 저장"
-                           TextColor="{StaticResource Secondary}"
+                           TextColor="{StaticResource White}"
                            HorizontalOptions="EndAndExpand"/>
                     <CheckBox x:Name="IsSave"
-                              Color="{StaticResource Secondary}"
+                              IsChecked="{Binding IsSave}"
+                              Color="{StaticResource White}"
                               BackgroundColor="{StaticResource Primary}"
                               Background="{StaticResource Primary}"
                               WidthRequest="40"
@@ -78,13 +87,13 @@
             </StackLayout>
 
             <Button Margin="0,15"                    
-                    Text="로그인" 
-                    TextColor="White"
+                    Text="로그인"                     
                     Clicked="OnSignInClicked"
                     HorizontalOptions="EndAndExpand">
                 <Button.ImageSource>
                     <FontImageSource 
-                        FontFamily="MaterialDesignIcons" 
+                        FontFamily="MaterialDesignIcons"
+                        Color="{StaticResource Tertiary}"
                         Glyph="{x:Static helpers:MaterialDesignIconsFonts.Login}"
                         Size="24">                        
                     </FontImageSource>                        
@@ -92,14 +101,16 @@
             </Button>
 
             <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                <Label TextColor="{StaticResource Secondary}" 
-                       FontSize="16" Text="암호찾기" 
+                <Label TextColor="{StaticResource Tertiary}" 
+                       FontSize="16" 
+                       Text="암호찾기"
                        VerticalOptions="EndAndExpand" 
                        HorizontalOptions="StartAndExpand" 
                        />
                 <Label FontFamily="OpenSansRegular" 
-                       TextColor="{StaticResource Secondary}" 
-                       FontSize="16" Text="회원가입"
+                       TextColor="{StaticResource Tertiary}" 
+                       FontSize="16" 
+                       Text="회원가입"
                        VerticalOptions="EndAndExpand" 
                        HorizontalOptions="EndAndExpand" 
                        />

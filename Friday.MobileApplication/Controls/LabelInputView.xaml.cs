@@ -1,4 +1,4 @@
-namespace Friday.MobileApplication.ContentViews;
+namespace Friday.MobileApplication.Controls;
 
 public partial class LabelInputView : ContentView
 {

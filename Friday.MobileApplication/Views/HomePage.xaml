@@ -3,19 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:helpers="clr-namespace:Friday.MobileApplication.Helpers"
              x:Class="Friday.MobileApplication.Views.HomePage"
-             Title="홈">
+             Title="홈"
+             BackgroundColor="{StaticResource Secondary}"
+             Shell.TitleColor="White">
     <VerticalStackLayout>
-        <Border BackgroundColor="WhiteSmoke">
+        <Border>
             <VerticalStackLayout>
-                <Label TextColor="MediumVioletRed"
+                <Label TextColor="{StaticResource Warning}"
                        FontAttributes="Bold"
                        Text="시스템 공지사항"/>
-                <Label>시스템 정기 점검 12월 30일 정기 점검이 있습니다. 사용에 유의하시기 바랍니다.</Label>
+                <Label Text="{Binding SystemNotice}"></Label>
             </VerticalStackLayout>            
         </Border>
         <Border>
             <VerticalStackLayout>
-                <Label TextColor="OrangeRed"
+                <Label TextColor="{StaticResource Tertiary}"
                        FontAttributes="Bold"
                        Text="오늘의 공지사항"/>
                 <Label Text="회계 마감일 입니다. 금일(24일)까지 모든 영수증 청구 바랍니다.&#10;미청구된 내역은 다음 회차에 청구될 예정입니다."/>
@@ -72,6 +74,7 @@
         <Button Text="회계 담당자" Clicked="OnAccountsManagerClicked">
             <Button.ImageSource>
                 <FontImageSource FontFamily="MaterialDesignIcons"
+                                 Color="{StaticResource Tertiary}"
                                  Glyph="{x:Static helpers:MaterialDesignIconsFonts.Phone}"
                                  Size="25" />
             </Button.ImageSource>
@@ -79,6 +82,7 @@
         <Button Text="밴드 연결" Clicked="OnBankConnectClicked">
             <Button.ImageSource>
                 <FontImageSource FontFamily="MaterialDesignIcons"
+                                 Color="{StaticResource Tertiary}"
                                  Glyph="{x:Static helpers:MaterialDesignIconsFonts.Connection}"
                                  Size="25" />
             </Button.ImageSource>

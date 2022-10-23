@@ -18,15 +18,19 @@ public static class MauiProgram
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                fonts.AddFont("glyphicons-halflings-regular.ttf", "BootstrapIcons");
+                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");                
                 fonts.AddFont(filename: "materialdesignicons-webfont.ttf", alias: "MaterialDesignIcons");
             })
             ;
 
-        
-#region [add services]                                
-        builder.Services.AddSingleton<AppShell>();
+
+        #region [add services]        
+        builder.Services.AddSingleton<LoginPage>();
+        builder.Services.AddSingleton<HomePage>();
+        builder.Services.AddSingleton<HomeViewModel>();
+        builder.Services.AddSingleton<LoginViewModel>();
+
+
         builder.Services.AddTransient<OcrListPage>();
         builder.Services.AddTransient<OcrPage>();
         builder.Services.AddTransient<OcrResultPage>();
@@ -36,9 +40,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<FridayDatabase>();
         #endregion
 
-        
-
-        return builder.Build();
+        var app = builder.Build();        
+        return app;
     }
 
 }

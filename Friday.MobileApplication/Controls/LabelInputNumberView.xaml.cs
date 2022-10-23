@@ -1,7 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using DocumentFormat.OpenXml.Vml;
 
-namespace Friday.MobileApplication.ContentViews;
+namespace Friday.MobileApplication.Controls;
 
 public partial class LabelInputNumberView : ContentView
 {
