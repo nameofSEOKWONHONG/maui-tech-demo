@@ -7,18 +7,24 @@ using System.Threading.Tasks;
 
 namespace Friday.MobileApplication.ViewModels
 {
-    public partial class LoginViewModel : ObservableObject
+    public partial class HomeViewModel : ObservableObject
     {
         [ObservableProperty]
-        string email;
+        string systemNotice;
 
         [ObservableProperty]
-        string password;
+        string todayNotice;
 
         [ObservableProperty]
-        bool isLogin;
+        double totalPayed;
 
         [ObservableProperty]
-        bool isSave;
+        string projectTitle;
+
+        [ObservableProperty]
+        bool isClose;
+
+        [ObservableProperty]
+        string projectTimes;
     }
 }

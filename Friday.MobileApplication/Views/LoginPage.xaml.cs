@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui.Behaviors;
 using CommunityToolkit.Mvvm.ComponentModel;
+using Friday.MobileApplication.ViewModels;
 using Microsoft.Maui;
 
 namespace Friday.MobileApplication.Views;
@@ -88,17 +89,3 @@ public partial class LoginPage : ContentPage
     }
 }
 
-public partial class LoginViewModel : ObservableObject
-{
-    [ObservableProperty]
-    string email;
-
-    [ObservableProperty]
-    string password;
-
-    [ObservableProperty]
-    bool isLogin;
-
-    [ObservableProperty]
-    bool isSave;
-}

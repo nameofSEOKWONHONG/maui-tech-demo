@@ -66,10 +66,11 @@ Custom Style you can apply to any Flyout Item
                     </VisualStateGroupList>
                 </Setter>
             </Style>
-            <Style TargetType="ShellContent">
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Secondary}" />
+            <Style TargetType="ShellContent">                
+                <Setter Property="Shell.NavBarHasShadow" Value="True"/>                
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Tertiary}" />
-                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource Gray300}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource Gray500}"/>
                 <Setter Property="Shell.TabBarDisabledColor" Value="{StaticResource Gray500}"/>
             </Style>
         </ResourceDictionary>
@@ -96,8 +97,8 @@ Custom Style you can apply to any Flyout Item
                       Route="MainPage"/>
         <ShellContent Title="증빙"
                       Icon="receipt_text_outline.png"
-                      ContentTemplate="{DataTemplate views:OcrListPage}"
-                      Route="OcrListPage"/>
+                      ContentTemplate="{DataTemplate views:ChargeListPage}"
+                      Route="ChargeListPage"/>
         <ShellContent Title="설정"
                       Icon="account_cog.png"
                       ContentTemplate="{DataTemplate views:SettingPage}"

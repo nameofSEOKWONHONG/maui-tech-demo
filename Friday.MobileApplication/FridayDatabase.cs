@@ -22,11 +22,7 @@ namespace Friday.MobileApplication
                 return;
 
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
-            var result = await Database.CreateTableAsync<LoginData>();
-            if(!(result == CreateTableResult.Created || result == CreateTableResult.Migrated))
-            {
-                await Shell.Current.DisplayAlert("오류", "DB 생성에 실패 했습니다.", "OK");
-            }
+            await Database.CreateTableAsync<LoginData>();
         }
 
         public async Task<LoginData> GetLoginDataAsync()

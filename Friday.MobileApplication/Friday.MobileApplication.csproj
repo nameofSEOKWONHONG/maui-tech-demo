@@ -55,6 +55,8 @@
 
     <ItemGroup>
       <None Remove="Resources\Fonts\glyphicons-halflings-regular.ttf" />
+      <None Remove="Resources\Fonts\Roboto-Bold.ttf" />
+      <None Remove="Resources\Fonts\Roboto-Regular.ttf" />
       <None Remove="Resources\Images\account.png" />
       <None Remove="Resources\Images\account_cog.png" />
       <None Remove="Resources\Images\home.png" />
@@ -83,14 +85,23 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Compile Update="Controls\LabelInputNumberView.xaml.cs">
+        <DependentUpon>LabelInputNumberView.xaml</DependentUpon>
+      </Compile>
       <Compile Update="Controls\LabelInputView.xaml.cs">
         <DependentUpon>LabelInputView.xaml</DependentUpon>
       </Compile>
       <Compile Update="Views\LoginPage.xaml.cs">
         <DependentUpon>LoginPage.xaml</DependentUpon>
       </Compile>
-      <Compile Update="Views\OcrListPage.xaml.cs">
-        <DependentUpon>OcrListPage.xaml</DependentUpon>
+      <Compile Update="Views\ChargeListPage.xaml.cs">
+        <DependentUpon>ChargeListPage.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Views\ChargeNewPage.xaml.cs">
+        <DependentUpon>ChargeNewPage.xaml</DependentUpon>
+      </Compile>
+      <Compile Update="Views\ChargeDetailPage.xaml.cs">
+        <DependentUpon>ChargeDetailPage.xaml</DependentUpon>
       </Compile>
     </ItemGroup>
 
@@ -113,13 +124,13 @@
       <MauiXaml Update="Views\HomePage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
-      <MauiXaml Update="Views\OcrListPage.xaml">
+      <MauiXaml Update="Views\ChargeListPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
-      <MauiXaml Update="Views\OcrPage.xaml">
+      <MauiXaml Update="Views\ChargeNewPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
-      <MauiXaml Update="Views\OcrResultPage.xaml">
+      <MauiXaml Update="Views\ChargeDetailPage.xaml">
         <Generator>MSBuild:Compile</Generator>
       </MauiXaml>
       <MauiXaml Update="Views\SettingPage.xaml">

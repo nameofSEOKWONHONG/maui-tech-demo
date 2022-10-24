@@ -19,7 +19,7 @@ public partial class AppShell : Shell
     void RegisterRoutes()
     {
         Routes.Add("HomePage", typeof(HomePage));
-        Routes.Add("OrcListPage", typeof(OcrListPage));
+        Routes.Add("ChargeListPage", typeof(ChargeListPage));
         Routes.Add("SettingPage", typeof(SettingPage));
         Routes.Add("LoginPage", typeof(LoginPage));
 

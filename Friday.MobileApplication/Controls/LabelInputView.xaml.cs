@@ -25,17 +25,6 @@ public partial class LabelInputView : ContentView
 
     public LabelInputView()
 	{
-		this.BindingContext = this;
 		InitializeComponent();
 	}
-
-    private void OnCompleted(object sender, EventArgs e)
-    {
-        this.Input.Unfocus();
-    }
-
-    private void OnUnfocused(object sender, FocusEventArgs e)
-    {
-        
-    }
 }

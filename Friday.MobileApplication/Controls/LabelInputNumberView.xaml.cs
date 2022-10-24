@@ -1,4 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
+using System.Globalization;
 
 namespace Friday.MobileApplication.Controls;
 
@@ -11,12 +12,30 @@ public partial class LabelInputNumberView : ContentView
         set => SetValue(LabelInputNumberView.LabelTextProperty, value);
     }
 
-    public static readonly BindableProperty EntryTextProperty = BindableProperty.Create(nameof(EntryText), typeof(string), typeof(LabelInputNumberView), string.Empty);
-    private string _entryText;
+    public static readonly BindableProperty NumberFormatProperty = BindableProperty.Create(nameof(NumberFormat), typeof(string), typeof(LabelInputNumberView), string.Empty);
+    public string NumberFormat
+    {
+        get => (string)GetValue(LabelInputNumberView.NumberFormatProperty);
+        set => SetValue(LabelInputNumberView.NumberFormatProperty, value);
+    }
+
+    public static readonly BindableProperty EntryTextProperty = BindableProperty.Create(nameof(EntryText), typeof(string), typeof(LabelInputNumberView), string.Empty);    
     public string EntryText
     {
-        get => (string)GetValue(LabelInputNumberView.EntryTextProperty);
-        set => SetValue(LabelInputNumberView.EntryTextProperty, value);
+        get
+        {
+            var value = (string)GetValue(LabelInputNumberView.EntryTextProperty);
+            //var formatInfo = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
+            //formatInfo.CurrencyGroupSeparator = string.Empty;
+            if (string.IsNullOrEmpty(value)) return value;
+            var stringValue = Convert.ToDecimal(value).ToString(NumberFormat);
+            
+            return stringValue;
+        }
+        set
+        {
+            SetValue(LabelInputNumberView.EntryTextProperty, value);
+        }
     }
 
     public static readonly BindableProperty EntryPlaceholderTextProperty = BindableProperty.Create(nameof(EntryPlaceholderText), typeof(string), typeof(LabelInputNumberView), string.Empty);
@@ -27,38 +46,7 @@ public partial class LabelInputNumberView : ContentView
     }
 
     public LabelInputNumberView()
-    {
-        this.BindingContext = this;
+    {        
         InitializeComponent();
-        this.Loaded += (s, e) =>
-        {
-            if (string.IsNullOrEmpty(this.Input.Text)) return;
-            ToCurrencyValue(this.Input);
-        };
-    }
-
-    private void OnCompleted(object sender, EventArgs e)
-    {
-        ToCurrencyValue(sender as Entry);
-        this.Input.Unfocus();        
-    }
-
-    private void OnUnfocused(object sender, FocusEventArgs e)
-    {
-        ToCurrencyValue(sender as Entry);
-    }
-
-    private void ToCurrencyValue(Entry entry)
-    {
-        if (entry == null) return;
-
-        if (string.IsNullOrEmpty(entry.Text)) return;
-
-        var v = entry.Text;
-        if (v.Contains(","))
-        {
-            v = entry.Text.Replace(",", "");
-        }
-        entry.Text = string.Format("{0:#,###}", Convert.ToInt64(v));
     }
 }

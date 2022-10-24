@@ -25,7 +25,7 @@
                 <Label Style="{StaticResource Welcome}" 
                        FontSize="32" 
                        Text="환영합니다"/>
-                <Label FontFamily="OpenSansRegular" 
+                <Label FontFamily="RobotoRegular" 
                        TextColor="{StaticResource White}" 
                        FontSize="16" 
                        Text="로그인 하세요."/>
