@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+	<title>MauiApp4</title>
+	<base href="/" />
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+	<link href="css/app.css" rel="stylesheet" />
+	<link href="MauiApp4.styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="status-bar-safe-area"></div>
+
+	<div id="app">Loading...</div>
+
+	<div id="blazor-error-ui">
+		An unhandled error has occurred.
+		<a href="" class="reload">Reload</a>
+		<a class="dismiss">🗙</a>
+	</div>
+
+	<script src="_framework/blazor.webview.js" autostart="false"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=[input your key]"></script>
+	<script type="text/javascript">
+		function InitKakaoMap() {
+			debugger;
+			var container = document.getElementById('map');
+			var options = {
+				center: new kakao.maps.LatLng(33.450701, 126.570667),
+				level: 3
+			};
+
+			var map = new kakao.maps.Map(container, options);
+		}
+	</script>
+</body>
+
+</html>

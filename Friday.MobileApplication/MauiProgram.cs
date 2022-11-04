@@ -16,6 +16,7 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()            
             .UseMauiCommunityToolkit()
+            .UseMauiMaps()
             .ConfigureFonts(fonts =>
             {
                 //fonts.AddFont("OpenSans-Regular.ttf", "RobotoRegular");
@@ -49,6 +50,11 @@ public static class MauiProgram
         //builder.Services.AddTransient<UserPage>();
 
         #endregion
+
+        builder.Services.AddMauiBlazorWebView();
+#if DEBUG
+        builder.Services.AddBlazorWebViewDeveloperTools();
+#endif
 
         var app = builder.Build();        
         return app;

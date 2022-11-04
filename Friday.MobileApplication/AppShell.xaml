@@ -92,18 +92,22 @@ Custom Style you can apply to any Flyout Item
                 FlyoutDisplayOptions="AsMultipleItems"
                 >        
         <ShellContent Title="홈"
-                      Icon="home.png"
+                      Icon="home.png"                      
                       ContentTemplate="{DataTemplate views:HomePage}"
                       Route="MainPage"/>
         <ShellContent Title="증빙"
                       Icon="receipt_text_outline.png"
                       ContentTemplate="{DataTemplate views:ChargeListPage}"
                       Route="ChargeListPage"/>
+        <ShellContent Title="맵"
+                      ContentTemplate="{DataTemplate views:MapPage}"
+                      Route="MapPage"/>        
         <ShellContent Title="설정"
                       Icon="account_cog.png"
                       ContentTemplate="{DataTemplate views:SettingPage}"
                       Route="SettingPage"/>
     </FlyoutItem>
     <MenuItem Text="Help"/>
+
 </Shell>
 
