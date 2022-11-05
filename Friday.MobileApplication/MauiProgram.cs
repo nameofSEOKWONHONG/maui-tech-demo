@@ -1,5 +1,6 @@
 ﻿using AppActions.Icons.Maui;
 using CommunityToolkit.Maui;
+using Friday.MobileApplication.Pages;
 using Friday.MobileApplication.ViewModels;
 using Friday.MobileApplication.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,6 +43,7 @@ public static class MauiProgram
         builder.Services.AddTransient<ChargeNewPage>();
         builder.Services.AddTransient<ChargeDetailPage>();
         builder.Services.AddTransient<ChargeDetailViewModel>();
+        builder.Services.AddSingleton<MapPage>();
 
         //builder.Services.AddTransient<OcrListPage>();
         //builder.Services.AddTransient<OcrPage>();

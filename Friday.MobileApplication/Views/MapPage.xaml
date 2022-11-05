@@ -19,7 +19,7 @@
             </BlazorWebView>
         </StackLayout>
         <StackLayout Grid.Row="1">
-            <Button Text="My Location" Clicked="OnLocationClicked"/>
+            <Button Text="Go Location" Clicked="OnLocationClicked"/>
         </StackLayout>
         <!--<maps:Map x:Name="mappy" IsShowingUser="True" IsTrafficEnabled="True" MapType="Hybrid">
             <maps:Map.MapElements>
